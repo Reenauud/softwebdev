@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.80936748.css",
+    "main.js": "/static/js/main.b751271c.js",
+    "static/js/453.64512fd7.chunk.js": "/static/js/453.64512fd7.chunk.js",
+    "static/media/debug.jpg": "/static/media/debug.e5294401d91c0c6a1278.jpg",
+    "static/media/codeSource.jpg": "/static/media/codeSource.4db97628e480b235f853.jpg",
+    "static/media/reunion.jpg": "/static/media/reunion.662b3db19b9461adabda.jpg",
+    "static/media/deploiement.jpg": "/static/media/deploiement.6691cc738226c21aaec4.jpg",
+    "static/media/web.jpg": "/static/media/web.6d6cb06346351eda6e05.jpg",
+    "static/media/prototype.jpg": "/static/media/prototype.7bd3e619db47a482a216.jpg",
+    "static/media/bdd.jpg": "/static/media/bdd.0fc9050f2e32038a6078.jpg",
+    "static/media/frontend.jpg": "/static/media/frontend.dab557c96657ee63dd1b.jpg",
+    "static/media/conception.jpg": "/static/media/conception.5cf6a9fb62d4819de78a.jpg",
+    "static/media/laptop.jpg": "/static/media/laptop.cc6dcdf6ba3a406ce5ce.jpg",
+    "static/media/backend.jpg": "/static/media/backend.7c55a5a25f3a7dbe821f.jpg",
+    "static/media/software-developer.jpg": "/static/media/software-developer.4b9c875a0709a071e59b.jpg",
+    "static/media/contact.jpg": "/static/media/contact.2c2d4e33fc2220ed52af.jpg",
+    "static/media/logo.png": "/static/media/logo.1f4124dbc1d6c6753dbc.png",
+    "static/media/Venus-BF651e78bbb893a.otf": "/static/media/Venus-BF651e78bbb893a.7582afc8daa31e9cb0ab.otf",
+    "index.html": "/index.html",
+    "main.80936748.css.map": "/static/css/main.80936748.css.map",
+    "main.b751271c.js.map": "/static/js/main.b751271c.js.map",
+    "453.64512fd7.chunk.js.map": "/static/js/453.64512fd7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80936748.css",
+    "static/js/main.b751271c.js"
+  ]
+}

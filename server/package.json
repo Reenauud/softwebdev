@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "pm2start": "pm2 start server.js",
+    "pm2del": "pm2 delete server"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "node-mailjet": "^6.0.8",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.9"
+  }
+}

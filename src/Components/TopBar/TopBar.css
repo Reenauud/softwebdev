@@ -1,0 +1,54 @@
+@media (max-device-width: 500px) {
+
+    .Container {
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        background: linear-gradient(to left, #0F0F0F, #10AEEF);
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+
+    .ContainerLogo {
+        width: 80%;
+        height: 6vh;
+        background-color: transparent;
+        display: flex;
+        align-items: end;
+        border-radius: 100px;
+        filter: drop-shadow(2px 2px 15px #2c00ff);
+
+
+    }
+
+    .Logo {
+        width: 100%;
+        /* box-shadow: 2px 2px 10px cyan; */
+
+    }
+
+
+    .ContainerNav
+    {
+        background-color: transparent;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        height: 5vh;
+        align-items: flex-end;
+    }
+
+    .linkText{
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-family: "Venus";
+        /* font-style: bold; */
+        
+    }
+
+}
+

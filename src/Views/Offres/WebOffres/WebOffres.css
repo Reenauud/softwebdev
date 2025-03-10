@@ -1,0 +1,9 @@
+@media (min-device-width: 500px) {
+
+    .ContainerWebOffre h6
+    {
+        background-color: darkred;
+        display: flex;
+        justify-content: flex-start;
+    }
+}

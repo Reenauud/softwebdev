@@ -1,0 +1,25 @@
+@media (max-device-width: 500px) {
+   .containerOffreMain {
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+   }
+
+
+}
+
+@media (min-device-width: 500px) {
+   .containerOffreMain {
+      background-color: transparent;
+      display: flex;
+      flex-direction: row-reverse;
+
+   }
+
+   .contact{
+
+      display: none;
+
+  }
+
+}

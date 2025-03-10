@@ -1,0 +1,12 @@
+@media (max-device-width: 500px) {
+    .ContainerFooter {
+        background: linear-gradient(to left, #0F0F0F, #10AEEF);
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .ContainerFooter h6 {
+        margin-right: 1%;
+        color: white;
+    }
+}
