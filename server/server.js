@@ -10,7 +10,7 @@ app.use(express.static("../public"));
 
 
 const corsOptions = {
-  origin: 'https://softwebsolutions.eu', // Origine autorisée
+  origin: 'https://softwebsolutions.eu/contact', // Origine autorisée
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Méthodes autorisées
   allowedHeaders: ['Content-Type', 'Authorization'] // En-têtes autorisés
 };
