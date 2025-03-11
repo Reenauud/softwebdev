@@ -7,7 +7,12 @@ const Mailjet = require('node-mailjet');
 require("dotenv").config()
 
 app.use(express.static("../public"));
-app.use(Cors());
+
+const corsOption = {
+  origin: "https://softwebsolutions.eu",
+  optionsSuccessStatus: 200
+}
+app.use(Cors(corsOption));
 app.use(express.json());
 
 function sendEmail(lastName, firstName, phoneNumber, email,message,company) {
