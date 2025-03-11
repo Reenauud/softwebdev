@@ -20,7 +20,7 @@ function Contact() {
       messageNotCheck[0].textContent ="";
 
       await axios
-        .post("http://localhost:8000/api", {
+        .post("https://localhost:8000/api", {
           lastName: lastName,
           firstName: firstName,
           phoneNumber: phoneNumber,
