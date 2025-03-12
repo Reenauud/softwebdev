@@ -20,7 +20,7 @@ function Contact() {
       messageNotCheck[0].textContent ="";
 
       await axios
-        .post("https://softwebsolutions.eu:8000/api", {
+        .post("http://softwebsolutions.eu:8000/api", {
           lastName: lastName,
           firstName: firstName,
           phoneNumber: phoneNumber,
