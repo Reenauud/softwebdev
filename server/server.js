@@ -11,13 +11,13 @@ require("dotenv").config();
 
 const sslOptions = {
   key: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/privkey.pem"),
-  cert: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/cert.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/fullchain.pem"),
 };
 
 app.use(express.static("../public"));
 app.use(
   Cors({
-    origin: "https://softwebsolutions.eu/contact",
+    origin: "https://softwebsolutions.eu",
     methods: "GET,POST",
     credentials: true,
   })
