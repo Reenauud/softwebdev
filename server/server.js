@@ -8,7 +8,7 @@ require("dotenv").config()
 
 app.use(express.static("../public"));
 
-app.use(Cors({origin: "https://softwebsolutions.eu:443"}));
+app.use(Cors({origin: "*"}));
 app.use(express.json());
 
 function sendEmail(lastName, firstName, phoneNumber, email,message,company) {
