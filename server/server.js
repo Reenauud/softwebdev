@@ -17,7 +17,7 @@ const sslOptions = {
 app.use(express.static("../public"));
 app.use(
   Cors({
-    origin: "https://softwebsolutions.eu",
+    origin: "https://softwebsolutions.eu/contact",
     methods: "GET,POST",
     credentials: true,
   })
