@@ -3,66 +3,67 @@ const Cors = require("cors");
 const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
-const Mailjet = require('node-mailjet');
+const Mailjet = require("node-mailjet");
 const https = require("https");
-const fs = require("fs")
+const fs = require("fs");
 
-require("dotenv").config()
+require("dotenv").config();
 
-const sslOptions = 
-{
-  key: fs.readFileSync('/etc/letsencrypt/live/softwebsolutions.eu/privkey.pem'),
-  cert: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/cert.pem")
-}
+const sslOptions = {
+  key: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/privkey.pem"),
+  cert: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/cert.pem"),
+};
 
 app.use(express.static("../public"));
-app.use(Cors({origin: "*"}));
+app.use(
+  Cors({
+    origin: "https://softwebsolutions.eu",
+    methods: "GET,POST",
+    credentials: true,
+  })
+);
 app.use(express.json());
 
-function sendEmail(lastName, firstName, phoneNumber, email,message,company) {
-
+function sendEmail(lastName, firstName, phoneNumber, email, message, company) {
   const mailjet = Mailjet.apiConnect(
     process.env.IDMAILJET,
-    process.env.PASSMAILJET,
+    process.env.PASSMAILJET
   );
-  
-  const request = mailjet
-          .post('send', { version: 'v3.1' })
-          .request({
-            Messages: [
-              {
-                From: {
-                  Email: process.env.EMAILFROM,
-                  Name: "Mailjet Pilot"
-                },
-                To: [
-                  {
-                    Email: process.env.EMAILTO,
-                    Name: "passenger 1"
-                  }
-                ],
-                Subject: "nouvel email envoyé de SoftWebDev",
-                TextPart: "",
-                HTMLPart: ` 
+
+  const request = mailjet.post("send", { version: "v3.1" }).request({
+    Messages: [
+      {
+        From: {
+          Email: process.env.EMAILFROM,
+          Name: "Mailjet Pilot",
+        },
+        To: [
+          {
+            Email: process.env.EMAILTO,
+            Name: "passenger 1",
+          },
+        ],
+        Subject: "nouvel email envoyé de SoftWebDev",
+        TextPart: "",
+        HTMLPart: ` 
                 <h4>Prénom : ${firstName}</h4>
                 <h4>Nom : ${lastName}</h4>
                 <h4>entreprise : ${company}</h4>
                 <h4>email : ${email}</h4>
                 <h4>numéro de téléphone : ${phoneNumber}</h4>
                 <h3>${message}</h3>
-                `
-              }
-            ]
-          })
-  
+                `,
+      },
+    ],
+  });
+
   request
-      .then((result) => {
-          console.log(result.body)
-      })
-      .catch((err) => {
-          console.log(err.statusCode)
-      })
-  
+    .then((result) => {
+      console.log(result.body);
+    })
+    .catch((err) => {
+      console.log(err.statusCode);
+    });
 }
 
 app.post("/api", (req, res) => {
@@ -73,7 +74,7 @@ app.post("/api", (req, res) => {
   let message = req.body.message;
   let company = req.body.company;
 
-  sendEmail(lastName, firstName, phoneNumber, email,message,company);
+  sendEmail(lastName, firstName, phoneNumber, email, message, company);
 
   res.send(
     console.log(lastName, firstName, phoneNumber, email, message, company)
