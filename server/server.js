@@ -8,14 +8,7 @@ require("dotenv").config()
 
 app.use(express.static("../public"));
 
-
-const corsOptions = {
-  origin: 'https://softwebsolutions.eu/contact', // Origine autorisée
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Méthodes autorisées
-  allowedHeaders: ['Content-Type', 'Authorization'] // En-têtes autorisés
-};
-
-app.use(Cors(corsOptions));
+app.use(Cors({origin: "https://softwebsolutions.eu:3000"}));
 app.use(express.json());
 
 function sendEmail(lastName, firstName, phoneNumber, email,message,company) {
