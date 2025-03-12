@@ -10,9 +10,9 @@ const fs = require("fs");
 require("dotenv").config();
 
 const sslOptions = {
-  key: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/privkey.pem"),
+  key: fs.readFileSync("/etc/letsencrypt/live/softwebdev.fr/privkey.pem"),
   cert: fs.readFileSync(
-    "/etc/letsencrypt/live/softwebsolutions.eu/fullchain.pem"
+    "/etc/letsencrypt/live/softwebdev.fr/fullchain.pem"
   ),
 };
 
