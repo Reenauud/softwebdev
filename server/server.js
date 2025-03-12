@@ -11,17 +11,13 @@ require("dotenv").config();
 
 const sslOptions = {
   key: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/privkey.pem"),
-  cert: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/fullchain.pem"),
+  cert: fs.readFileSync(
+    "/etc/letsencrypt/live/softwebsolutions.eu/fullchain.pem"
+  ),
 };
 
 app.use(express.static("../public"));
-app.use(
-  Cors({
-    origin: "https://softwebsolutions.eu/contact",
-    methods: "GET,POST",
-    credentials: true,
-  })
-);
+app.use("*",Cors({ origin: "https://softwebsolutions.eu" }));
 app.use(express.json());
 
 function sendEmail(lastName, firstName, phoneNumber, email, message, company) {
