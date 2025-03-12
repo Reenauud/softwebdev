@@ -4,10 +4,18 @@ const express = require("express");
 const app = express();
 const nodemailer = require("nodemailer");
 const Mailjet = require('node-mailjet');
+const https = require("https");
+const fs = require("fs")
+
 require("dotenv").config()
 
-app.use(express.static("../public"));
+const sslOptions = 
+{
+  key: fs.readFileSync('/etc/letsencrypt/live/softwebsolutions.eu/privkey.pem'),
+  cert: fs.readFileSync("/etc/letsencrypt/live/softwebsolutions.eu/cert.pem")
+}
 
+app.use(express.static("../public"));
 app.use(Cors({origin: "*"}));
 app.use(express.json());
 
@@ -72,6 +80,11 @@ app.post("/api", (req, res) => {
   );
 });
 
-app.listen(PORT, () => {
-  console.log("le serveur tourne sur le port", PORT);
+// app.listen(PORT, () => {
+//   console.log("le serveur tourne sur le port", PORT);
+// });
+
+// Démarrer le serveur HTTPS
+https.createServer(sslOptions, app).listen(PORT, () => {
+  console.log(`Le serveur HTTPS tourne sur le port ${PORT}`);
 });
