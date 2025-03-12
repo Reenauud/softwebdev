@@ -17,7 +17,7 @@ const sslOptions = {
 };
 
 app.use(express.static("../public"));
-app.use("*",Cors({ origin: "https://softwebsolutions.eu" }));
+app.use("*",Cors({ origin: "https://softwebdev.fr" }));
 
 app.use(express.json());
 
