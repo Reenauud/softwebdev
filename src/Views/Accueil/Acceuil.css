@@ -16,10 +16,46 @@
 
    }
 
+   h6{
+      text-align: justify;
+   }
+
    .contact{
 
       display: none;
 
   }
+
+  .separation
+  {
+   display: flex;
+   background-color: white;
+   border-radius: 10px;
+   width: 30%;
+   height: 0.5vh;
+   opacity: 0.3;
+   
+  }
+
+  .containerSeparation{
+   display: flex;
+   justify-content: center;
+   margin-top: 5%;
+  }
+
+  .intro{
+   background-color: transparent;
+   width: 80%;
+   margin-left: 10%;
+   margin-bottom: 5%;
+  }
+
+  .ContainerText h6{
+   background-color: transparent;
+   width: 80%;
+   margin-left: 10%;
+  }
+
+
 
 }

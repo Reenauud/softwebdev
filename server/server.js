@@ -18,6 +18,7 @@ const sslOptions = {
 
 app.use(express.static("../public"));
 app.use("*",Cors({ origin: "https://softwebdev.fr" }));
+// app.use("*",Cors({origin: "http://localhost:3000"}))
 
 app.use(express.json());
 

@@ -1,4 +1,78 @@
+@media (max-device-width: 500px) {
+
+    .textarea {
+        width: 90%;
+        height: 15vh
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form h6 {
+        margin: 5px;
+    }
+
+    .containerCheckbox {
+        background-color: transparent;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        height: 11vh;
+        margin-left: 2%;
+
+    }
+
+    .containerCheckbox input {
+        height: 30px
+    }
+}
+
+
 @media (min-device-width: 500px) {
 
+    .textarea {
+        width: 500px;
+        height: 25vh
+    }
+
+    .containerContact {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        background-color: white;
+        width: 50%;
+
+    }
+
+    form h6 {
+        margin: 5px;
+    }
+
+    .containerCheckbox {
+        background-color: transparent;
+        display: flex;
+        width: 43%;
+        align-items: center;
+        height: 11vh;
+        margin-right: 2.7%;
+
+    }
+
+    .containerCheckbox input {
+        height: 30px
+    }
 
 }

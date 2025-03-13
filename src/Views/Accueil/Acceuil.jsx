@@ -7,12 +7,9 @@ import contact from "../..//images/Acceuil/contact.jpg";
 import web from "../..//images/Acceuil/web.jpg";
 import softwaredev from "../..//images/Acceuil/software-developer.jpg";
 import { useNavigate } from "react-router";
-import Footer from "../../Components/Footer/Footer";
-import axios from "axios";
 
 function Acceuil() {
   const navigation = useNavigate();
-
 
   return (
     <div className="ContainerAcceuil">
@@ -38,18 +35,23 @@ function Acceuil() {
         height={82}
       ></Cards>
 
+      <div className="containerSeparation">
+        <div className="separation"></div>
+      </div>
+
       <div>
         <h1>Nos Offres</h1>
       </div>
-      <div>
-        <h2>Création de Site Web</h2>
-      </div>
+
       <div className="containerOffreMain">
         <div
           onClick={() => {
             navigation("/offreWeb");
           }}
         >
+          <div>
+            <h2>Création de Site Web</h2>
+          </div>
           <Cards
             img={web}
             alt={"ddd"}
@@ -62,14 +64,14 @@ function Acceuil() {
           ></Cards>
         </div>
 
-        <div>
-          <h2>Création de Logiciels</h2>
-        </div>
         <div
           onClick={() => {
             navigation("/offreSoftware");
           }}
         >
+          <div>
+            <h2>Création de Logiciels</h2>
+          </div>
           <Cards
             img={softwaredev}
             alt={"ddd"}
@@ -83,9 +85,15 @@ function Acceuil() {
         </div>
       </div>
 
+      <div className="containerSeparation">
+        <div className="separation"></div>
+      </div>
+
       <div>
         <h1>Contactez-nous</h1>
       </div>
+
+      <div></div>
 
       <Cards
         img={contact}

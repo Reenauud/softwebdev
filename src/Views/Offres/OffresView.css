@@ -1,0 +1,12 @@
+@media (min-device-width: 500px) {
+
+    .containerOffre {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .ContainerOffresView h6 {
+        width: 95%;
+        margin-left: 2.5%;
+    }
+}

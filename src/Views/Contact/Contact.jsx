@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 function Contact() {
   const [lastName, SetLastName] = useState("");
@@ -11,35 +12,55 @@ function Contact() {
   const [agreeStatus, SetAgreeStatus] = useState();
   const [company, SetCompany] = useState();
 
+
+  const ErrorSendMail = () =>
+    toast("veuillez cocher la case pour envoyé votre Email");
+
+  const errorValue = () =>
+    toast("veuillez remplir tout les champs obligatoire");
+
   const callApi = async () => {
     const checkBox = document.querySelector('input[type="checkbox"]');
 
     if (checkBox.checked) {
-      console.log("La checkbox est cochée.");
-      const messageNotCheck = document.getElementsByClassName("notcheck");
-      messageNotCheck[0].textContent ="";
-
-      await axios
-        .post("https://softwebdev.fr:8000/api", {
-          lastName: lastName,
-          firstName: firstName,
-          phoneNumber: phoneNumber,
-          email: email,
-          message: message,
-          agreeStatus: agreeStatus,
-          company: company,
-        })
-        .then((data) => console.log(data));
+      if (
+        phoneNumber === 0 ||
+        email === "" ||
+        message === "" ||
+        firstName === "" ||
+        lastName === ""
+      ) {
+        errorValue();
+      } else {
+        await axios
+          .post("https://softwebdev.fr:8000/api", {
+            lastName: lastName,
+            firstName: firstName,
+            phoneNumber: phoneNumber,
+            email: email,
+            message: message,
+            agreeStatus: agreeStatus,
+            company: company,
+          })
+          .then(() => {
+            const mailSend = new Promise((resolve) =>
+              setTimeout(resolve, 3000)
+            );
+            toast.promise(mailSend, {
+              pending: `${"Envoi de l'email en cours"}`,
+              success: "Email envoyé",
+              error: "Promise rejected 🤯",
+            });
+          });
+      }
     } else {
-      console.log("La checkbox n'est pas cochée.");
-      const messageNotCheck = document.getElementsByClassName("notcheck");
-      messageNotCheck[0].textContent =
-        "veuillez cocher la case pour envoyé votre Email";
+      ErrorSendMail();
     }
   };
 
   return (
-    <div>
+    <div className="containerContact">
+      <ToastContainer> </ToastContainer>
       <form>
         <h6>Nom: *</h6>
         <input
@@ -55,7 +76,7 @@ function Contact() {
             SetFirstName(e.target.value);
           }}
         />
-        <h6>Société: *</h6>
+        <h6>Société:</h6>
         <input
           type="text"
           onChange={(e) => {
@@ -77,19 +98,19 @@ function Contact() {
           }}
         />
         <h6>Messages: *</h6>
-        <input
-          type="area"
+        <textarea style={{}}
+        className="textarea"
+          type="text"
           onChange={(e) => {
             SetMessage(e.target.value);
           }}
         />
       </form>
-      <div>
+      <div className="containerCheckbox">
         <input
           type="checkbox"
           onChange={(e) => SetAgreeStatus(e.target.value)}
         />
-        <h6 className="notcheck"></h6>
         <h6>
           J’accepte que les données de ce formulaire soit envoyées par e-mail à
           contact@softwebdev.fr
