@@ -116,7 +116,7 @@ function Contact() {
           contact@softwebdev.fr
         </h6>
       </div>
-      <button onClick={callApi}>Envoyé</button>
+      <button className="contactButton" onClick={callApi}>Envoyé</button>
     </div>
   );
 }

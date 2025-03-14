@@ -28,6 +28,19 @@
     .containerCheckbox input {
         height: 30px
     }
+
+    .contactButton{
+        width: 50%;
+        height: 5vh;
+        margin-top: 1%;
+        margin-bottom: 3%;
+        background-color: transparent;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px 1px white;
+        border: 1px solid black;
+    }
 }
 
 
@@ -73,6 +86,19 @@
 
     .containerCheckbox input {
         height: 30px
+    }
+
+    .contactButton{
+        width: 10%;
+        height: 5vh;
+        margin-top: 1%;
+        margin-bottom: 3%;
+        background-color: transparent;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px 1px white;
+        border: 1px solid black;
     }
 
 }
